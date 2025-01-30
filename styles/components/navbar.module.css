@@ -1,0 +1,25 @@
+.navWrapper {
+  justify-content: space-between;
+  height: 60px;
+  margin: 63px 60px;
+  align-items: stretch;
+}
+
+.menuWrapper {
+  display: flex;
+  width: 509px;
+  height: 100%;
+  flex-direction: row;
+  border: 1px solid #393939;
+  border-radius: 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 92px;
+}
+
+.languageWrapper {
+  height: 100%;
+  /* border: solid 1px red; */
+  align-items: center;
+  gap: 31px;
+}
