@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 100px;
 `;
 
 export const MainTitle = styled.div`
