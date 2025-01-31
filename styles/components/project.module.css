@@ -1,0 +1,19 @@
+.projectTitle {
+  font-family: Inter;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 62.93px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.projectSubtitle {
+  color: #8b8b8b;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24.2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
