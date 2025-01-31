@@ -1,3 +1,24 @@
+.wrapper {
+  width: 100%;
+  padding: 110px 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contactWrapper {
+  gap: 59px;
+}
+
+.bodyUpperWrapper {
+  align-items: center;
+  gap: 140px;
+}
+
+.bodyUpperLeftWrapper {
+  gap: 34px;
+}
+
 .name {
   font-size: 75px;
   font-weight: 500;
@@ -5,4 +26,24 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
+}
+
+.description {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 31.47px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.techTitle {
+  font-size: 31px;
+  font-weight: 600;
+}
+
+.techWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
 }
