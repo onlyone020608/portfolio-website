@@ -1,16 +1,28 @@
 import ProjectSidebar from "@/components/ProjectSidebar";
 import styles from "@/styles/components/project.module.css";
 import { LinkItem } from "@/styles/ProjectStyles";
+import { useRouter } from "next/navigation";
+import projectData from "@/data/projects";
 import Image from "next/image";
-export default function project() {
+
+export async function getServerSideProps({ params }) {
+  const { id } = params;
+  const project = projectData[id] || null;
+  console.log(projectData[id]);
+  return {
+    props: { project },
+  };
+}
+
+export default function project({ project }) {
+  // const project = projectData[id];
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.headerWrapper}>
         <div className={styles.titleWrapper}>
-          <div className={styles.projectTitle}>Grocey</div>
-          <div className={styles.projectSubtitle}>
-            grocery recommendation system
-          </div>
+          <div className={styles.projectTitle}>{project.title}</div>
+          <div className={styles.projectSubtitle}>{project.description}</div>
         </div>
         <div className={styles.linkWrapper}>
           <LinkItem>
