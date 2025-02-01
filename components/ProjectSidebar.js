@@ -1,10 +1,25 @@
 import { SidebarWrapper, SidebarItem } from "@/styles/ProjectSidebarStyles";
 import { useState } from "react";
-export default function ProjectSidebar() {
-  const [activeTab, setActiveTab] = useState("overview");
+export default function ProjectSidebar({ activeTab, onTabChange }) {
+  const tabs = [
+    "overview",
+    "my role",
+    "tech stack",
+    "key features",
+    "challenges & outcomes",
+  ];
   return (
     <SidebarWrapper>
-      <SidebarItem
+      {tabs.map((tab) => (
+        <SidebarItem
+          key={tab}
+          active={activeTab === tab}
+          onClick={() => onTabChange(tab)}
+        >
+          {tab}
+        </SidebarItem>
+      ))}
+      {/* <SidebarItem
         active={activeTab === "overview"}
         onClick={() => setActiveTab("overview")}
       >
@@ -33,7 +48,7 @@ export default function ProjectSidebar() {
         onClick={() => setActiveTab("challenges & outcomes")}
       >
         challenges & outcomes
-      </SidebarItem>
+      </SidebarItem> */}
     </SidebarWrapper>
   );
 }
