@@ -10,7 +10,7 @@ import globalStyles from "../styles/globals.module.css";
 import classNames from "classnames";
 import styles from "../styles/components/about.module.css";
 import Image from "next/image";
-import { message, Tooltip } from "antd";
+import { ConfigProvider, message, Tooltip, Segmented } from "antd";
 import { CopyFilled, CheckCircleFilled } from "@ant-design/icons";
 import { useState } from "react";
 
@@ -19,7 +19,7 @@ export default function About() {
   const [tooltipText, setTooltipText] = useState(email);
   const [copied, setCopied] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
-
+  const [mode, setMode] = useState("Languages");
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email);
@@ -116,6 +116,26 @@ export default function About() {
         </div>
       </div>
       <div className={styles.techTitle}>Tech Stack</div>
+      <ConfigProvider
+        theme={{
+          components: {
+            Segmented: {
+              itemSelectedBg: "#52c41a", // ✅ 선택된 항목 배경색
+              itemSelectedColor: "white", // ✅ 선택된 항목 글자색
+              colorText: "#ffffff", // ✅ 일반 항목 글자색
+              borderRadius: 12, // ✅ 테두리 둥글기
+              colorBgContainer: "#000000",
+            },
+          },
+        }}
+      >
+        <Segmented
+          options={["Languages", "Backend", "Frontend", "Database", "Tools"]}
+          value={mode}
+          onChange={setMode}
+          // className={styles.segment}
+        />
+      </ConfigProvider>
       <div className={styles.techWrapper}>
         <TechBar>
           <TechBarItem>Languages</TechBarItem>
