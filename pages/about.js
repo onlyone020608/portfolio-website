@@ -3,15 +3,39 @@ import {
   TechBar,
   TechBarItem,
   TechIconWrapper,
+  TipContent,
+  CopyIcon,
 } from "../styles/AboutStyle";
 import globalStyles from "../styles/globals.module.css";
 import classNames from "classnames";
 import styles from "../styles/components/about.module.css";
 import Image from "next/image";
+import { message, Tooltip } from "antd";
+import { CopyFilled, CheckCircleFilled } from "@ant-design/icons";
+import { useState } from "react";
 
 export default function About() {
+  const email = "onlyone0608@hufs.ac.kr";
+  const [tooltipText, setTooltipText] = useState(email);
+  const [copied, setCopied] = useState(false);
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTooltipText("Email copied to clipboard");
+      setTimeout(() => {
+        setTooltipText(email);
+        setCopied(false);
+      }, 2000);
+    } catch (err) {
+      messageApi.error("Couldn’t copy to clipboard. Please try again.");
+    }
+  };
   return (
     <div className={styles.wrapper}>
+      {contextHolder}
       <div
         className={classNames(globalStyles.flexRow, styles.bodyUpperWrapper)}
       >
@@ -51,10 +75,39 @@ export default function About() {
               />
               LinkedIn
             </ContactIcon>
-            <ContactIcon>
-              <Image src="/gmail.svg" alt="Gmail Logo" width={54} height={54} />
-              Gmail
-            </ContactIcon>
+            <Tooltip
+              title={
+                <TipContent>
+                  {tooltipText}
+                  {copied ? (
+                    <CopyIcon style={{ color: "#52c41a" }}>
+                      <CheckCircleFilled
+                        style={{ background: "transparent" }}
+                      />
+                    </CopyIcon>
+                  ) : (
+                    <CopyIcon onClick={copyEmail}>
+                      <CopyFilled
+                        style={{ background: "transparent" }}
+                        onClick={copyEmail}
+                      />
+                    </CopyIcon>
+                  )}
+                </TipContent>
+              }
+              placement="bottom"
+              mouseLeaveDelay={1}
+            >
+              <ContactIcon>
+                <Image
+                  src="/gmail.svg"
+                  alt="Gmail Logo"
+                  width={54}
+                  height={54}
+                />
+                Gmail
+              </ContactIcon>
+            </Tooltip>
           </div>
         </div>
         <div className={styles.description}>

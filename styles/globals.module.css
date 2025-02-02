@@ -7,3 +7,9 @@
   display: flex;
   flex-direction: column;
 }
+
+/* .customTooltip .antTooltipInner {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+} */

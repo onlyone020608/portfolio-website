@@ -1,4 +1,19 @@
 import styled from "@emotion/styled";
+import { Tooltip } from "antd";
+
+export const TipContent = styled.div`
+  background: transparent;
+  display: flex;
+  gap: 10px;
+`;
+
+export const CopyIcon = styled.div`
+  cursor: pointer;
+  background: transparent !important;
+  svg {
+    background: transparent !important;
+  }
+`;
 
 export const ContactIcon = styled.a`
   display: flex;
@@ -8,6 +23,7 @@ export const ContactIcon = styled.a`
   align-items: center;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 `;
 
 export const TechBar = styled.div`
