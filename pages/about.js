@@ -25,7 +25,11 @@ export default function About() {
           <div
             className={classNames(globalStyles.flexRow, styles.contactWrapper)}
           >
-            <ContactIcon>
+            <ContactIcon
+              href="https://github.com/onlyone020608"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/github.svg"
                 alt="GitHub Logo"
@@ -34,7 +38,11 @@ export default function About() {
               />
               GitHub
             </ContactIcon>
-            <ContactIcon>
+            <ContactIcon
+              href="https://www.linkedin.com/in/hyewonkim0608/"
+              target="_blank"
+              rel="noopener"
+            >
               <Image
                 src="/linkedin.svg"
                 alt="LinkedIn Logo"

@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 
-export const ContactIcon = styled.div`
+export const ContactIcon = styled.a`
   display: flex;
   gap: 21px;
   font-size: 26px;
   border: 1px solid red;
   align-items: center;
+  text-decoration: none;
+  color: black;
 `;
 
 export const TechBar = styled.div`
