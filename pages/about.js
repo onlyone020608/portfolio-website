@@ -8,20 +8,33 @@ import {
   SegItem,
 } from "../styles/AboutStyle";
 import globalStyles from "../styles/globals.module.css";
+import AboutTech from "@/components/AboutTech";
 import classNames from "classnames";
 import styles from "../styles/components/about.module.css";
 import Image from "next/image";
 import { ConfigProvider, message, Tooltip, Segmented } from "antd";
 import { CopyFilled, CheckCircleFilled } from "@ant-design/icons";
+import { getIcons } from "@/utils/getIcons";
 import { useState } from "react";
+export async function getStaticProps() {
+  const techStacks = {
+    Languages: getIcons("languages"),
+    Backend: getIcons("backend"),
+    Frontend: getIcons("frontend"),
+    Tools: getIcons("tools"),
+    Database: getIcons("database"),
+  };
 
-export default function About() {
+  return { props: { techStacks } };
+}
+
+export default function About({ techStacks }) {
   const email = "onlyone0608@hufs.ac.kr";
   const [tooltipText, setTooltipText] = useState(email);
   const [copied, setCopied] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
   const [mode, setMode] = useState("Languages");
-  const tabItems = ["Languages", "Backend", "Frontend", "Database", "Tools"];
+  // const tabItems = ["Languages", "Backend", "Frontend", "Database", "Tools"];
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email);
@@ -125,19 +138,8 @@ export default function About() {
         onChange={setMode}
         defaultValue="Languages"
       />
-      <div className={styles.techWrapper}>
-        <TechBar>
-          <TechBarItem>Languages</TechBarItem>
-          <TechBarItem>Backend</TechBarItem>
-          <TechBarItem>Frontend</TechBarItem>
-          <TechBarItem>Database</TechBarItem>
-          <TechBarItem>Tools</TechBarItem>
-        </TechBar>
-        <TechIconWrapper>
-          <Image src="/django.svg" alt="Django Logo" width={40} height={40} />
-          <Image src="/spring.svg" alt="Spring Logo" width={40} height={40} />
-        </TechIconWrapper>
-      </div>
+      <AboutTech icons={techStacks[mode]} />
+      <div className={styles.techWrapper}></div>
     </div>
   );
 }
