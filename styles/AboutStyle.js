@@ -1,6 +1,15 @@
 import styled from "@emotion/styled";
 import { Tooltip } from "antd";
 
+export const SegItem = styled.div`
+  background-color: transparent;
+  /* color: red; */
+  padding: 14px 80px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 500;
+`;
+
 export const TipContent = styled.div`
   background: transparent;
   display: flex;

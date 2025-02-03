@@ -5,6 +5,7 @@ import {
   TechIconWrapper,
   TipContent,
   CopyIcon,
+  SegItem,
 } from "../styles/AboutStyle";
 import globalStyles from "../styles/globals.module.css";
 import classNames from "classnames";
@@ -20,6 +21,7 @@ export default function About() {
   const [copied, setCopied] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
   const [mode, setMode] = useState("Languages");
+  const tabItems = ["Languages", "Backend", "Frontend", "Database", "Tools"];
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email);
@@ -116,26 +118,13 @@ export default function About() {
         </div>
       </div>
       <div className={styles.techTitle}>Tech Stack</div>
-      <ConfigProvider
-        theme={{
-          components: {
-            Segmented: {
-              itemSelectedBg: "#52c41a", // ✅ 선택된 항목 배경색
-              itemSelectedColor: "white", // ✅ 선택된 항목 글자색
-              colorText: "#ffffff", // ✅ 일반 항목 글자색
-              borderRadius: 12, // ✅ 테두리 둥글기
-              colorBgContainer: "#000000",
-            },
-          },
-        }}
-      >
-        <Segmented
-          options={["Languages", "Backend", "Frontend", "Database", "Tools"]}
-          value={mode}
-          onChange={setMode}
-          // className={styles.segment}
-        />
-      </ConfigProvider>
+
+      <Segmented
+        options={["Languages", "Backend", "Frontend", "Database", "Tools"]}
+        value={mode}
+        onChange={setMode}
+        defaultValue="Languages"
+      />
       <div className={styles.techWrapper}>
         <TechBar>
           <TechBarItem>Languages</TechBarItem>
