@@ -131,13 +131,21 @@ export default function About({ techStacks }) {
         </div>
       </div>
       <div className={styles.techTitle}>Tech Stack</div>
-
-      <Segmented
-        options={["Languages", "Backend", "Frontend", "Database", "Tools"]}
-        value={mode}
-        onChange={setMode}
-        defaultValue="Languages"
-      />
+      <ConfigProvider
+        theme={{
+          token: {
+            borderRadius: 22, // ✅ 전역 테마에서 강제 덮어쓰기
+          },
+        }}
+      >
+        <Segmented
+          options={["Languages", "Backend", "Frontend", "Database", "Tools"]}
+          value={mode}
+          onChange={setMode}
+          defaultValue="Languages"
+          key="unique-key"
+        />
+      </ConfigProvider>
       <AboutTech icons={techStacks[mode]} />
       <div className={styles.techWrapper}></div>
     </div>

@@ -8,29 +8,40 @@ export const globalStyles = css`
   body {
     background-color: #f5f5f5;
   }
+  .ant-segmented-thumb {
+    border-radius: 20px !important;
+    transition: transform 0.4s ease-in-out !important;
+  }
   .ant-segmented {
     background-color: #cbcbcb;
-    border-radius: 20px;
+    border-radius: 20px !important;
+    width: 1060px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+  .ant-segmented-group {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
   }
 
   .ant-segmented-item {
+    position: relative;
+    z-index: 1;
+    color: #333;
+    transition: color 0.4s ease-in-out;
     padding: 12px 60px;
-    will-change: background-color, border-radius;
-    transition: background-color 0.3s ease, border-radius 0.3s ease;
-    /* transition: all 0.3s ease; */
+    border-radius: 22px !important;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    /* background-color: transparent !important; */
   }
 
   .ant-segmented-item-selected {
     border-radius: 22px !important;
-  }
-  .ant-segmented-thumb {
-    border-radius: 22px !important;
-    background: transparent !important;
-    /* z-index: 1; */
-    /* transition: all 0.3s ease; */
-  }
-  .ant-segmented-item:hover {
-    transition: background-color 0.3s ease, border-radius 0.3s ease;
-    border-radius: 22px;
+    overflow: hidden;
+    background-color: transparent;
   }
 `;
