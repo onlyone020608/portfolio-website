@@ -1,12 +1,4 @@
-import {
-  ContactIcon,
-  TechBar,
-  TechBarItem,
-  TechIconWrapper,
-  TipContent,
-  CopyIcon,
-  SegItem,
-} from "../styles/AboutStyle";
+import { ContactIcon, TipContent, CopyIcon } from "../styles/AboutStyle";
 import globalStyles from "../styles/globals.module.css";
 import AboutTech from "@/components/AboutTech";
 import classNames from "classnames";
@@ -72,10 +64,10 @@ export default function About({ techStacks }) {
               <Image
                 src="/github.svg"
                 alt="GitHub Logo"
-                width={54}
-                height={54}
+                width={42}
+                height={42}
               />
-              GitHub
+              <span>GitHub</span>
             </ContactIcon>
             <ContactIcon
               href="https://www.linkedin.com/in/hyewonkim0608/"
@@ -85,10 +77,10 @@ export default function About({ techStacks }) {
               <Image
                 src="/linkedin.svg"
                 alt="LinkedIn Logo"
-                width={54}
-                height={54}
+                width={42}
+                height={42}
               />
-              LinkedIn
+              <span>LinkedIn</span>
             </ContactIcon>
             <Tooltip
               title={
@@ -117,10 +109,10 @@ export default function About({ techStacks }) {
                 <Image
                   src="/gmail.svg"
                   alt="Gmail Logo"
-                  width={54}
-                  height={54}
+                  width={42}
+                  height={42}
                 />
-                Gmail
+                <span>Gmail</span>
               </ContactIcon>
             </Tooltip>
           </div>
@@ -131,22 +123,14 @@ export default function About({ techStacks }) {
         </div>
       </div>
       <div className={styles.techTitle}>Tech Stack</div>
-      <ConfigProvider
-        theme={{
-          token: {
-            borderRadius: 22, // ✅ 전역 테마에서 강제 덮어쓰기
-          },
-        }}
-      >
-        <Segmented
-          options={["Languages", "Backend", "Frontend", "Database", "Tools"]}
-          value={mode}
-          onChange={setMode}
-          defaultValue="Languages"
-        />
-      </ConfigProvider>
+      <Segmented
+        options={["Languages", "Backend", "Frontend", "Database", "Tools"]}
+        value={mode}
+        onChange={setMode}
+        defaultValue="Languages"
+      />
+
       <AboutTech icons={techStacks[mode]} />
-      <div className={styles.techWrapper}></div>
     </div>
   );
 }

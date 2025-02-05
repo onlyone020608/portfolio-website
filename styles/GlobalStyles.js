@@ -34,14 +34,11 @@ export const globalStyles = css`
     padding: 12px 60px;
     border-radius: 22px !important;
     width: 100%;
-    overflow: hidden;
     text-align: center;
-    /* background-color: transparent !important; */
   }
 
   .ant-segmented-item-selected {
     border-radius: 22px !important;
-    overflow: hidden;
     background-color: transparent;
   }
 `;
