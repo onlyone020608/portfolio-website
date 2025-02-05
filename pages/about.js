@@ -143,7 +143,6 @@ export default function About({ techStacks }) {
           value={mode}
           onChange={setMode}
           defaultValue="Languages"
-          key="unique-key"
         />
       </ConfigProvider>
       <AboutTech icons={techStacks[mode]} />
