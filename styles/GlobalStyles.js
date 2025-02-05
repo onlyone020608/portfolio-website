@@ -4,9 +4,12 @@ export const globalStyles = css`
   * {
     margin: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
   }
   body {
     background-color: #f5f5f5;
+    width: 100%;
+    overflow-x: hidden;
   }
   .ant-segmented-thumb {
     border-radius: 20px !important;
@@ -41,4 +44,17 @@ export const globalStyles = css`
     border-radius: 22px !important;
     background-color: transparent;
   }
+
+  .ant-carousel {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slick-slider {
+    width: 100%;
+  }
+
+  /* .slick-list {
+    width: 100%;
+  } */
 `;

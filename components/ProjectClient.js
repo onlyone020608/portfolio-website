@@ -52,7 +52,7 @@ export default function ProjectClient({ project }) {
           activeTab={activeTab}
           onTabChange={setActiveTab}
         ></ProjectSidebar>
-        <div>내용이 들어갈 부분입니다.</div>
+        {/* <div>내용이 들어갈 부분입니다.</div> */}
         <ActiveComponent project={project} />
       </div>
     </div>
