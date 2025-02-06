@@ -7,4 +7,8 @@ export const MenuItem = styled(Link)`
   padding: 5px;
   text-decoration: none;
   color: ${(props) => (props.active ? "black" : "#cbcbcb")};
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: ${(props) => (!props.active ? "scale(1.05)" : "none")};
+  }
 `;

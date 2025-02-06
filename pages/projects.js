@@ -2,7 +2,6 @@ import { ProjectName, ProjectLink } from "../styles/ProjectsStyle";
 import globalStyles from "../styles/globals.module.css";
 import classNames from "classnames";
 import styles from "../styles/components/projects.module.css";
-import Link from "next/link";
 
 export default function Projects() {
   return (
