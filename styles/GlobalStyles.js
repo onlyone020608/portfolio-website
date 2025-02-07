@@ -40,6 +40,22 @@ export const globalStyles = css`
     text-align: center;
   }
 
+  .anticon-down {
+    width: 0.6em;
+    height: 0.6em;
+    color: #5b5b5b;
+  }
+
+  .anticon-down > svg {
+    padding-top: 3.5px;
+  }
+
+  .ant-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
   .ant-segmented-item-selected {
     border-radius: 22px !important;
     background-color: transparent;
@@ -57,4 +73,13 @@ export const globalStyles = css`
   /* .slick-list {
     width: 100%;
   } */
+  .ant-dropdown-menu {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px !important;
+  }
+  .ant-dropdown-menu-item {
+    font-size: 16px !important;
+    /* font-weight: 400 !important; */
+  }
 `;

@@ -26,7 +26,7 @@ const temp2 = {
 };
 
 export default function Overview({ project }) {
-  console.log(project);
+  // console.log(project);
   return (
     <div style={tempStyle}>
       <div style={temp2}>{project.overview.overviewContent}</div>
