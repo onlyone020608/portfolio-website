@@ -9,7 +9,7 @@ export const globalStyles = css`
   body {
     background-color: #f5f5f5;
     width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   .ant-segmented-thumb {
     border-radius: 20px !important;

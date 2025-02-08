@@ -18,6 +18,25 @@ const projectData = {
         "- Integrated state management with Redux ",
       ],
     },
+    keyfeatures: [
+      {
+        title: "AI-driven Grocery Recommendation",
+        description:
+          "Uses reinforcement learning (DQN) to predict optimal purchase timing",
+        img: "/images/grocey/grocey1.png",
+      },
+      {
+        title: "Optimized Inventory Management",
+        description:
+          "Uses reinforcement learning (DQN) to predict optimal purchase timing",
+        img: "/images/grocey/grocey2.png",
+      },
+      {
+        title: "Feature 3",
+        description: "Description 3",
+        img: "/images/grocey/grocey1.png",
+      },
+    ],
     techstack: {
       backend: ["spring"],
       frontend: ["react native", "redux tool"],

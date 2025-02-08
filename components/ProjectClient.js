@@ -4,16 +4,18 @@ import styles from "@/styles/components/project.module.css";
 import { LinkItem } from "@/styles/ProjectStyles";
 import Overview from "./projects/Overview";
 import Myrole from "./projects/Myrole";
+import KeyFeatures from "./projects/KeyFeatures";
 import Techstack from "./projects/Techstack";
 import Image from "next/image";
 
 export default function ProjectClient({ project }) {
   const [activeTab, setActiveTab] = useState("overview");
+
   const TABS = {
     overview: Overview,
     "my role": Myrole,
     "tech stack": Techstack,
-    // "key features": KeyFeatures,
+    "key features": KeyFeatures,
     // "challenges & outcomes":Challenges
   };
 
