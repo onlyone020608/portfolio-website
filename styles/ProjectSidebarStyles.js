@@ -10,4 +10,5 @@ export const SidebarItem = styled.div`
   font-size: 24px;
   font-weight: 600;
   color: ${(props) => (props.active ? "black" : "#cbcbcb")};
+  cursor: pointer;
 `;
